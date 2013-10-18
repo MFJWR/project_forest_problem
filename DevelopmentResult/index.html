@@ -1,0 +1,374 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="keywords" content="Aoki,Atsushi,Smalltalk,Smalltalker,Program,Programmer,Object,Oriented,Programming">
+<meta name="description" content="ソフトウェア工学IIの小テスト">
+<meta name="author" content="AOKI Atsushi">
+<link rev="made" href="index.html">
+<link rel="index" href="index.html">
+<style type="text/css">
+<!--
+body {
+  background-color : #ffffff;
+  margin : 20px;
+  padding : 10px;
+  font-family : serif;
+  font-size : 10pt;
+}
+a {
+  text-decoration : underline;
+  color : #000000;
+}
+a:link {
+  background-color : #ffddbb;
+}
+a:visited {
+  background-color : #ccffcc;
+}
+a:hover {
+  background-color : #dddddd;
+}
+a:active {
+  background-color : #dddddd;
+}
+div.belt {
+  background-color : #eeeeee;
+  padding : 0px 4px;
+}
+div.belt-yellow {
+  background-color : #ffffcc;
+  padding : 0px 4px;
+}
+div.belt-blue {
+  background-color : #ddeeff;
+  padding : 0px 4px;
+}
+div.right-small {
+  text-align : right;
+  font-size : 8pt;
+}
+img.border {
+  border-width : 1px;
+  border-color : #000000;
+  vertical-align : middle;
+}
+img.borderless {
+  border-width : 0px;
+  vertical-align : middle;
+}
+p.belt {
+  background-color : #ffeedd;
+  padding : 4px 8px;
+}
+p.belt-blue {
+  background-color : #ddeeff;
+  padding : 4px 8px;
+}
+pre.belt {
+  background-color : #ddeeff;
+  padding : 4px 8px;
+}
+pre.belt-yellow {
+  background-color : #ffffcc;
+  padding : 4px 8px;
+}
+table {
+  border-style : solid;
+  border-width : 0px;
+  border-color : #000000;
+  font-family : serif;
+  font-size : 10pt;
+}
+table.profile {
+  border-style : solid;
+  border-width : 0px;
+  border-color : #000000;
+  font-family : serif;
+  font-size : 10pt;
+  margin-top : 8px;
+  margin-left : 8px;
+  margin-right : 8px;
+  margin-bottom : 8px;
+}
+table.belt {
+  border-style : solid;
+  border-width : 0px;
+  border-color : #000000;
+  background-color : #ffeedd;
+  padding : 0px 0px;
+  width : 100%;
+}
+table.content {
+  border-style : solid;
+  border-width : 0px;
+  border-color : #000000;
+  padding : 2px 4px;
+}
+table.font-fixed {
+  border-style : solid;
+  border-width : 0px;
+  border-color : #000000;
+  padding : 2px 4px;
+  font-family : monospace;
+}
+table.nest {
+  border-style : solid;
+  border-width : 0px;
+  border-color : #000000;
+  padding : 0px 0px;
+}
+td {
+  padding : 0px 0px;
+  vertical-align : middle;
+}
+td.center {
+  text-align : center;
+}
+td.center-half {
+  text-align : center;
+  width : 50%;
+  font-size : 8pt;
+}
+td.center-small {
+  text-align : center;
+  font-size : 8pt;
+  padding : 0px 4px;
+}
+td.center-small-nopadding {
+  text-align : center;
+  font-size : 8pt;
+  padding : 0px 0px;
+}
+td.center-white {
+  text-align : center;
+  background-color : #ffffff;
+}
+td.center-small-white {
+  text-align : center;
+  font-size : 8pt;
+  background-color : #ffffff;
+}
+td.center-border1 {
+  text-align : center;
+  vertical-align : middle;
+  empty-cells : show;
+  border-style : solid;
+  border-width : 1px;
+  border-color : #ffc080;
+  width : 22px;
+  height : 22px;
+}
+td.left-small {
+  text-align : left;
+  font-size : 8pt;
+  padding : 0px 4px;
+}
+td.left-small-white {
+  text-align : left;
+  font-size : 8pt;
+  padding : 0px 4px;
+  background-color : #ffffff;
+}
+td.right-small {
+  text-align : right;
+  font-size : 8pt;
+  padding : 0px 4px;
+}
+td.right-small-white {
+  text-align : right;
+  font-size : 8pt;
+  padding : 0px 4px;
+  background-color : #ffffff;
+}
+th {
+  padding : 0px 0px;
+  vertical-align : middle;
+}
+#menu {
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  height: 32px;
+}
+#menu ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-align: center;
+  clear: both;
+}
+#menu li {
+  margin: 0px 5px 0px 0px;
+  padding: 0px;
+  float: left;
+}
+#menu a {
+  display: block;
+  padding: 2px 4px;
+  text-decoration: none;
+  margin: 0px;
+  font-weight: bold;
+  background: #FFFFFF;
+  color: #333333;
+  border: 1px solid #666666;
+}
+#menu a:hover {
+  display: block;
+  padding: 2px 4px;
+  border-bottom: 1px solid #000000;
+  text-decoration: none;
+  background: #FFCC66;
+}
+#menu .current {
+  background-color: #F45F57;
+  font-weight: bold;
+  color: #FFFFFF;
+  border: 1px solid #333333;
+}
+-->
+</style>
+<title>ソフトウェア工学IIの小テスト「樹状整列」開発実績報告書</title>
+</head>
+<body>
+<div id="menu">
+<ul>
+  <li><a href="../index.html">ホーム</a></li>
+  <li><a href="../Requirement/index.html">要求仕様書</a></li>
+  <li><a href="../DevelopmentPlan/index.html">開発計画書</a></li>
+  <li><a href="../BasicDesign/index.html">基本設計書</a></li>
+  <li><a href="../DetailDesign/index.html">詳細設計書</a></li>
+  <li><a href="../TestSpecification/index.html">テスト仕様書</a></li>
+  <li><a href="../TestResult/index.html">テスト結果</a></li>
+  <li><a href="../DevelopmentResult/index.html" class="current">開発実績</a></li>
+  <li><a href="../Program/index.html">プログラム</a></li>
+  <li><a href="../Manual/index.html">マニュアル</a></li>
+</ul>
+</div>
+<hr>
+<h2>ソフトウェア工学IIの小テスト「樹状整列」開発実績報告書</h2>
+<div class="belt">
+
+</div>
+<ul>
+  <li><a href="#DevelopmentResult">開発実績(進歩状況)</a>
+  <li><a href="#All">全体の流れ</a>
+  <li><a href="#Private">個人の流れ</a>
+  <ul>
+    <li><a href="#fujiwara">藤原 匡輝</a>
+    <li><a href="#muta">牟田 暸太郎</a>
+    <li><a href="#miyama">美山 永吉</a>
+    <li><a href="#nakamura">中村 海理</a>
+    <li><a href="#negami">根上 拓也</a>
+    <li><a href="#shimizu">清水 控視</a>
+  </ul>
+  <li><a href="#kakonodate">更新履歴</a>
+</ul>
+
+<div class="belt">
+<h3><a name="DevelopmentResult">開発実績(進歩状況)</a></h3>
+</div>
+<p>今回の演習では2013年06月06日に開発を始め、2013年07月23日(火)に開発を完了した。以下に進歩状況の開発スケジュールを開発実績として示す</p>
+
+<table summary="table">
+  <tbody>
+    <tr>
+      <td>
+      <table class="content" summary="table">
+        <tbody>
+          <tr>
+            <td class="center-small"><a href="images/finalplan.jpg"><img class="borderless" src="thumbnails/finalplan.jpg" width="800" height="400" alt="schedule"></a></td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<div class="belt">
+<h3><a name="All">全体の流れ</a></h3>
+</div>
+<p>
+　自分たちの班の作業はまず、要求仕様書からの要求分析から始めた。それをふまえ、要求仕様書から開発計画書を作ることで、それぞれが今回作成するソフトウェアに対する具体的な動作のイメージができた。その後、ソフトウェアの具体的な動作の流れなどを全員が把握、整理出来るよう基本設計を作成し、それを基本設計書に記した。詳細設計図などにおいては班内に数名、青木さんのプロジェクト演習を受けているメンバーがいたのでそれらの経験や例を全員に共有、指摘し合うことで比較的スムーズに進行することが出来た。また、最終的にこのことが今後の作業にも非常に効果があり、今回の課題をこなす上で最も貢献していたと感じる。よって詳細設計図、スタブは比較的予定どおりに完成させられた。この時期に新メンバーとして清水控視を迎える。<br>
+　そしてここからが最も長く、しんどい時期となる実装の段階に入る。予想はしていたのだがやはりこの工程に１番時間を費やすこととなった。このあたりから毎週定期的に班で集まり、作業することとなる。コーディングする上で最も時間を費やし、苦戦することとなったのは各ノードの表示である。意外とアニメーション自体はすぐに実装することが出来たのだが、当初はどうしても各ノードの表示が汚く、要求仕様書にあるような綺麗な配置にすることがなかなか出来なかった。ノードがどのような規則で並んでいるのか、その答えに辿り着くのに時間がかかってしまった事が原因である。要求仕様書の例の画像を見たり、何度もソースコードの書き換えを行ったりし、その繰り返しの中でなんとか答えにたどり着く事が出来た。<br>
+　このプロジェクトで特に力を入れて取り組んだ事は、やはりメインであるソフトウェアの開発である。要求仕様として求められている機能はある程度問題なく実装出来たが、ファイルを切り替えたり、アニメーションをもう一度見たり出来ないのは不便だと感じたので、そのような使い勝手を重視した機能を後から更に実装した。<br>
+　次にWeb管理についての記述を行う。今回は企業としてのソフトウェア開発を想定しているため、成果物としてソフトウェアだけではなく、その過程やソースなど、たくさんの情報を整理して、可視化しておくことがとても重要となると思い、リポジトリを大いに活用してプロジェクトを進めた。また、メンバーでも現在完成済の資料を一括で閲覧、確認出来ることも非常に便利であり、有効活用することにした。<br>
+　メンバー間の連絡ツールとしてはSkypeとLineを使用し、また、ほぼ毎週集まることも出来たためメンバー同士の連携は非常に良かったのではないかと思う。
+</p>
+<div class="belt">
+<h3><a name="Private">個人の流れ</a></h3>
+</div>
+
+<h4><a name="fujiwara">藤原 匡輝</a></h4>
+<ul>
+<li>リポジトリの開設を行った。
+<li>プログラム全体のスタブ作成と実装を行った。
+<li>build.xml・Makefileなど、ビルド関連のファイルを作成。
+<li>プログラムの変更に伴う各UMLの訂正を行った。
+<li>MVCモデルの理解、オブジェクト指向言語javaの理解が深まった。
+</ul>
+
+<h4><a name="muta">牟田 暸太郎</a></h4>
+<ul>
+<li>4つのMVCを1つのフレームに描くプログラムを作成
+<li>二次元の静的な部分のプログラムを作成
+<li>一次元の動的な部分の森君とコンサルタントの宮崎さんと着手
+<li>二次元の動的な部分を一次元の動的な部分を参考にプログラムを作成
+<li>
+</ul>
+
+<h4><a name="negami">根上 拓也</a></h4>
+<ul>
+<li>Webの総合管理及び作成
+<li>詳細設計図の作成
+</ul>
+
+<h4><a name="miyama">美山 永吉</a></h4>
+<ul>
+<li>プロジェクトの各工程に関する知識を調べたり、聞きにいったりして、やらなければならないこと身につける。
+<li>各メンバにあった役割を見つけ、それについて教える。
+<li>クライアントへの状況報告。
+<li>各メンバのモチベーション管理。
+<li>MVCについての理解が深まった。
+<li>PMとしてweb,プログラミング,設計書,企業的姿勢など積極的に作業を行い、ほぼ全ての作業に関わったので、ソフトウェア開発を広く深く学ぷことができた。 
+</ul>
+
+
+<h4><a name="nakamura">中村 海理</a></h4>
+<ul>
+<li>データフロー図作成
+<li>アイコンの作成及び修正
+<li>開発実績の作成及び修正
+<li>ソフトウェア開発において有効なSVNの利用方法を身につけた。
+<li>ソフトウェア開発手法においてリポジトリの重大性を理解した。
+</ul>
+
+<h4><a name="shimizu">清水 控視</a></h4>
+<ul>
+<li>データフロー図作成
+<li>プログラムのアイコンの作成及び修正
+<li>開発実績の作成及び修正
+<li>ソフトウェア開発において有効なSVNの利用方法を身につけた。
+<li>ソフトウェア開発においてリポジトリの有用性を理解した。
+</ul>
+
+<br>
+<div class="belt">
+<h3><a name="kakonodate">更新履歴</a></h3>
+</div>
+
+<hr>
+<div class="right-small">Copyright 2013 Project Root, Updated: 2013/07/22 (Created: 2013/07/22)</div>
+ <p>
+  <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="正当なCSSです!" height="31" width="88">
+    </a>
+</p>
+
+</body>
+</html>

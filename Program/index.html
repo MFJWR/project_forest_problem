@@ -1,0 +1,1160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="keywords" content="Aoki,Atsushi,Smalltalk,Smalltalker,Program,Programmer,Object,Oriented,Programming">
+<meta name="description" content="ソフトウェア工学IIの小テスト">
+<meta name="author" content="AOKI Atsushi">
+<link rev="made" href="index.html">
+<link rel="index" href="index.html">
+<style type="text/css">
+<!--
+body {
+  background-color : #ffffff;
+  margin : 20px;
+  padding : 10px;
+  font-family : serif;
+  font-size : 10pt;
+}
+a {
+  text-decoration : underline;
+  color : #000000;
+}
+a:link {
+  background-color : #ffddbb;
+}
+a:visited {
+  background-color : #ccffcc;
+}
+a:hover {
+  background-color : #dddddd;
+}
+a:active {
+  background-color : #dddddd;
+}
+div.belt {
+  background-color : #eeeeee;
+  padding : 0px 4px;
+}
+div.belt-yellow {
+  background-color : #ffffcc;
+  padding : 0px 4px;
+}
+div.belt-blue {
+  background-color : #ddeeff;
+  padding : 0px 4px;
+}
+div.right-small {
+  text-align : right;
+  font-size : 8pt;
+}
+img.border {
+  border-width : 1px;
+  border-color : #000000;
+  vertical-align : middle;
+}
+img.borderless {
+  border-width : 0px;
+  vertical-align : middle;
+}
+p.belt {
+  background-color : #ffeedd;
+  padding : 4px 8px;
+}
+p.belt-blue {
+  background-color : #ddeeff;
+  padding : 4px 8px;
+}
+pre.belt {
+  background-color : #ddeeff;
+  padding : 4px 8px;
+}
+pre.belt-yellow {
+  background-color : #ffffcc;
+  padding : 4px 8px;
+}
+table {
+  border-style : solid;
+  border-width : 0px;
+  border-color : #000000;
+  font-family : serif;
+  font-size : 10pt;
+}
+table.profile {
+  border-style : solid;
+  border-width : 0px;
+  border-color : #000000;
+  font-family : serif;
+  font-size : 10pt;
+  margin-top : 8px;
+  margin-left : 8px;
+  margin-right : 8px;
+  margin-bottom : 8px;
+}
+table.belt {
+  border-style : solid;
+  border-width : 0px;
+  border-color : #000000;
+  background-color : #ffeedd;
+  padding : 0px 0px;
+  width : 100%;
+}
+table.content {
+  border-style : solid;
+  border-width : 0px;
+  border-color : #000000;
+  padding : 2px 4px;
+}
+table.font-fixed {
+  border-style : solid;
+  border-width : 0px;
+  border-color : #000000;
+  padding : 2px 4px;
+  font-family : monospace;
+}
+table.nest {
+  border-style : solid;
+  border-width : 0px;
+  border-color : #000000;
+  padding : 0px 0px;
+}
+td {
+  padding : 0px 0px;
+  vertical-align : middle;
+}
+td.center {
+  text-align : center;
+}
+td.center-half {
+  text-align : center;
+  width : 50%;
+  font-size : 8pt;
+}
+td.center-small {
+  text-align : center;
+  font-size : 8pt;
+  padding : 0px 4px;
+}
+td.center-small-nopadding {
+  text-align : center;
+  font-size : 8pt;
+  padding : 0px 0px;
+}
+td.center-white {
+  text-align : center;
+  background-color : #ffffff;
+}
+td.center-small-white {
+  text-align : center;
+  font-size : 8pt;
+  background-color : #ffffff;
+}
+td.center-border1 {
+  text-align : center;
+  vertical-align : middle;
+  empty-cells : show;
+  border-style : solid;
+  border-width : 1px;
+  border-color : #ffc080;
+  width : 22px;
+  height : 22px;
+}
+td.left-small {
+  text-align : left;
+  font-size : 8pt;
+  padding : 0px 4px;
+}
+td.left-small-white {
+  text-align : left;
+  font-size : 8pt;
+  padding : 0px 4px;
+  background-color : #ffffff;
+}
+td.right-small {
+  text-align : right;
+  font-size : 8pt;
+  padding : 0px 4px;
+}
+td.right-small-white {
+  text-align : right;
+  font-size : 8pt;
+  padding : 0px 4px;
+  background-color : #ffffff;
+}
+th {
+  padding : 0px 0px;
+  vertical-align : middle;
+}
+#menu {
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  height: 32px;
+}
+#menu ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-align: center;
+  clear: both;
+}
+#menu li {
+  margin: 0px 5px 0px 0px;
+  padding: 0px;
+  float: left;
+}
+#menu a {
+  display: block;
+  padding: 2px 4px;
+  text-decoration: none;
+  margin: 0px;
+  font-weight: bold;
+  background: #FFFFFF;
+  color: #333333;
+  border: 1px solid #666666;
+}
+#menu a:hover {
+  display: block;
+  padding: 2px 4px;
+  border-bottom: 1px solid #000000;
+  text-decoration: none;
+  background: #FFCC66;
+}
+#menu .current {
+  background-color: #F45F57;
+  font-weight: bold;
+  color: #FFFFFF;
+  border: 1px solid #333333;
+}
+-->
+</style>
+<title>ソフトウェア工学IIの小テスト「樹状整列」プログラム</title>
+</head>
+<body>
+<div id="menu">
+<ul>
+  <li><a href="../index.html">ホーム</a></li>
+  <li><a href="../Requirement/index.html">要求仕様書</a></li>
+  <li><a href="../DevelopmentPlan/index.html">開発計画書</a></li>
+  <li><a href="../BasicDesign/index.html">基本設計書</a></li>
+  <li><a href="../DetailDesign/index.html">詳細設計書</a></li>
+  <li><a href="../TestSpecification/index.html">テスト仕様書</a></li>
+  <li><a href="../TestResult/index.html">テスト結果</a></li>
+  <li><a href="../DevelopmentResult/index.html">開発実績</a></li>
+  <li><a href="../Program/index.html" class="current">プログラム</a></li>
+  <li><a href="../Manual/index.html">マニュアル</a></li>
+</ul>
+</div>
+<hr>
+<h2>ソフトウェア工学IIの小テスト「樹状整列」プログラム</h2>
+
+<ul>
+ <li><a href="#Forest">Forest</a>(メインクラス)
+ <li><a href="#ForestController">ForestController</a>
+ <li><a href="#ForestModel">ForestModel</a>
+ <li><a href="#ForestView">ForestView</a>
+ <li><a href="#Node">Node</a>
+ <li><a href="#NodeComparator">NodeComparator</a>
+</ul>
+<br>
+
+<div class="belt">
+<h3><a name="Forest">Forest</a>(メインクラス)</h3>
+</div>
+package forest;<br>
+<br>
+import javax.swing.JFrame;<br>
+import javax.swing.JMenuBar;<br>
+
+/**<br>
+ * メインプログラム。<br>
+ * 木構造の集まりを表現したテキストファイル群が用意されているので、それらを読み込み、<br>
+ * それぞれの木構造を樹状に美しく整列させ、複数の木構造をきれいに配置して、<br>
+ * 一つのウィンドウの中に可視化するプログラムである。<br>
+ * <br>
+ * @author スタブ作成(2013/07/10 藤原)<br>
+ */<br>
+public class Forest<br>
+{<br>
+	/**<br>
+	 * 全てのNodeインスタンスを持っているForestModelのインスタンスを束縛する。<br>
+	 */<br>
+	private ForestModel aModel;<br>
+
+	/**<br>
+	 * 表示を司るForestViewのインスタンスを束縛する。<br>
+	 */<br>
+	private ForestView aView;<br>
+
+	/**<br>
+	 * 制御を司るForestControllerのインスタンスを束縛する。<br>
+	 */<br>
+	private ForestController aController;<br>
+<br>
+	/**<br>
+	 * ウィンドウを表示するJFrameのインスタンスを束縛する。<br>
+	 */<br>
+	private JFrame aFrame;<br>
+<br>
+	/**<br>
+	 * メインメソッド。<br>
+	 * <br>
+	 * @param args コマンドライン引数<br>
+	 */<br>
+	public static void main(String[] args)<br>
+	{<br>
+		new Forest();<br>
+	}<br>
+
+	/**<br>
+	 * Forestクラスインスタンスを作成して応答する。<br>
+	 * Model・View・Controllerの各インスタンスと、新規ウィンドウをそれぞれ1つ生成、フィールドに束縛する。<br>
+	 */<br>
+	public Forest()<br>
+	{<br>
+		System.setProperty("apple.laf.useScreenMenuBar", "true");<br>
+		aController = new ForestController();<br>
+		aModel = new ForestModel();<br>
+		aView = new ForestView(aModel);<br>
+		aController.setModel(aModel);<br>
+		aController.setView(aView);<br>
+		aFrame = new JFrame("Forest");<br>
+		aFrame.setBounds(0, 0, 1280, 800);<br>
+		aFrame.getContentPane().setLayout(null);<br>
+		aFrame.getContentPane().add(aView);<br>
+		aFrame.setBackground(Color.WHITE);<br>
+		aFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br>
+		aFrame.setJMenuBar(createMenuBar());<br>
+		aFrame.setVisible(true);<br>
+	}<br>
+
+	/**<br>
+	 * JMenuBarインスタンスを生成して応答する。<br>
+	 * <br>
+	 * @return aMenuBar JMenuBarインスタンス<br>
+	 */<br>
+	public JMenuBar createMenuBar()<br>
+{<br>
+JMenuBar aMenuBar = new JMenuBar();<Br>
+JMenu file = new JMenu("ファイル");<Br>
+JMenuItem fileOpen = new JMenuItem("ファイルを開く…");<Br>
+
+fileOpen.addActionListener(new ActionListener()<Br>
+{<Br>
+
+@Override<Br>
+public void actionPerformed(ActionEvent e)<Br>
+{<Br>
+JFileChooser aFileChooser = new JFileChooser(<Br>
+"Requirement/texts");<Br>
+if (aFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)<Br>
+{<Br>
+aController.start(aFileChooser.getSelectedFile().getPath());<Br>
+aFrame.setTitle(aFileChooser.getSelectedFile().getName()<Br>
++ " - Forest");<Br>
+}<Br>
+}<Br>
+});<Br>
+
+file.add(fileOpen);<Br>
+aMenuBar.add(file);<Br>
+
+return aMenuBar;<br>
+}<br>
+}<br>
+
+<br>
+
+<div class="belt">
+<h3><a name="ForestController">ForestController</a></h3>
+</div>
+<br>
+import java.awt.event.ActionListener;<br>
+import java.awt.event.MouseEvent;<br>
+import java.awt.event.MouseListener;<br>
+import java.awt.event.MouseMotionListener;<br>
+
+import javax.swing.JMenuItem;<br>
+import javax.swing.JPopupMenu;<br>
+
+/**<br>
+ * コントローラのクラス。自身をビューのリスナーとし、ビューからマウスイベントを受けとり、<br>
+ * そのイベントに応じてビュー、モデルにメッセージを送る。<br>
+ * <br>
+ * @author スタブ作成(2013/07/15 藤原)<br>
+ * @author 実装(2013/7/17 藤原)<br>
+ */<br>
+public class ForestController implements MouseListener, MouseMotionListener<br>
+{<br>
+	/**<br>
+	 * 全てのNodeインスタンスを持っているForestModelのインスタンスを束縛する。<br>
+	 */<br>
+	private ForestModel aModel;<br>
+
+	/**<br>
+	 * 表示を司るForestViewのインスタンスを束縛する。<br>
+	 */<br>
+	private ForestView aView;<br>
+
+	/**<br>
+	 * ドラッグ開始位置の座標を持つPointインスタンスを束縛する。<br>
+	 */<br>
+	private Point previous;<br>
+
+	/**<br>
+	 * 現在読み込まれているテキストファイルのパス。<br>
+	 */<br>
+	private String currentFilePath;<br>
+
+	/**<br>
+	 * ビュー上で右クリックした時表示されるポップアップメニューのインスタンスを束縛する。<br>
+	 */<br>
+	private JPopupMenu aPopup;<br>
+
+	/**<br>
+	 * インスタンスを生成して応答する。
+	 */<br>
+	public ForestController()<br>
+	{<br>
+		super();<br>
+		setPopup();<br>
+	}<br>
+
+	/**<br>
+	 * モデルのインスタンスをフィールドに束縛する。<br>
+	 * <br>
+	 * @param aModel - ForestModelのインスタンス<br>
+	 */<br>
+	public void setModel(ForestModel aModel)<br>
+	{<br>
+		this.aModel = aModel;<br>
+	}<br>
+
+	/**<br>
+	 * ビューのインスタンスをフィールドに束縛し、<br>
+	 * ビューのリスナをこのコントローラに設定する。<br>
+	 * <br>
+	 * @param aView - ForestViewのインスタンス<br>
+	 */<br>
+
+	public void setView(ForestView aView)<br>
+	{<br>
+		this.aView = aView;<br>
+		aView.addMouseMotionListener(this);<br>
+		aView.addMouseListener(this;);<br>
+	}<br>
+
+	/**<br>
+	 * モデルにテキストファイルを読み込ませ、Nodeインスタンスを作成、<br>
+	 * それらをビューにセットする。<br>
+	 * <br>
+	 * @param filePath - テキストファイルのパス文字列<br>
+	 */<br>
+	public void start(String filePath)<br>
+	{<br>
+		if (filePath != null)<br>
+			currentFilePath = filePath;<br>
+		aModel.load(currentFilePath);<br>
+		aView.setNode();<br>
+	}<br>
+
+
+	private void setPopup()<br>
+	{<br>
+		aPopup = new JPopupMenu();<br>
+		JMenuItem animation = new JMenuItem("アニメーションを開始");<br>
+		animation.addActionListener(new ActionListener()<br>
+		{<br>
+			@Override<br>
+			public void actionPerformed(ActionEvent e)<br>
+			{<br>
+				start(currentFilePath);<br>
+				aView.animation();<br>
+			}<br>
+		});<br>
+		aPopup.add(animation);<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseMotionListener#mouseDragged(java.awt.event.MouseEvent<br>
+	 * )の実装。<br>
+	 * ドラッグイベントが発生した時呼ばれる。<br>
+	 * ドラッグイベントが発生している間は、カーソルを十字にする。 <br>
+	 * 更に、現在のビューの座標、現在のカーソルの座標、ドラッグ開始位置の座標を用いて<br>
+	 * ドラッグ後のビュー座標を計算、位置を更新する。<br>
+	 * <br>
+	 * @param e - マウスイベント<br>
+	 */<br>
+	@Override<br>
+	public void mouseDragged(MouseEvent e)<br>
+	{<br>
+		aView.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));<br>
+		Point newPoint = new Point(aView.getX() - previous.x + e.getX(),<br>
+				aView.getY() - previous.y + e.getY());<br>
+		aView.setLocation(newPoint);<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)の実装。<br>
+	 * イベント発生時のカーソル座標をPointインスタンスとして束縛する。<br>
+	 * <br>
+	 * @param e - マウスイベント<br>
+	 */<br>
+	@Override<br>
+	public void mousePressed(MouseEvent e)<br>
+	{<br>
+		previous = e.getPoint();<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)の実装。<br>
+	 * カーソルの形を元に戻す。<br>
+	 * <br>
+	 * @param e - マウスイベント<br>
+	 */<br>
+	@Override<br>
+	public void mouseReleased(MouseEvent e)<br>
+	{<br>
+		aView.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)の実装。<br>
+	 * 右クリックされた時、ポップアップメニューを表示する。<br>
+	 * <br>
+	 * @param e - マウスイベント<br>
+	 */<br>
+	@Override<br>
+	public void mouseClicked(MouseEvent e)<br>
+	{<br>
+		if (aModel.getNodes().size() > 0<br>
+				&& javax.swing.SwingUtilities.isRightMouseButton(e))<br>
+			aPopup.show(aView, e.getX(), e.getY());<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseMotionListener#mouseMoved(java.awt.event.MouseEvent)<br>
+	 * の実装。<br>
+	 * 何もしない。<br>
+	 * <br>
+	 * @param e - マウスイベント<br>
+	 */<br>
+	@Override<br>
+	public void mouseMoved(MouseEvent e)<br>
+	{<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)の実装。<br>
+	 * 何もしない。<br>
+	 * <br>
+	 * @param e - マウスイベント<br>
+	 */<br>
+	@Override<br>
+	public void mouseEntered(MouseEvent e)<br>
+	{<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)の実装。<br>
+	 * 何もしない。<br>
+	 * <br>
+	 * @param e - マウスイベトント<br>
+	 */<br>
+	@Override<br>
+	public void mouseExited(MouseEvent e)<br>
+	{<br>
+	}<br>
+}<br>
+
+<br>
+
+<div class="belt">
+<h3><a name="ForestModel">ForestModel</a></h3>
+</div>
+package forest;<br>
+import java.io.BufferedReader;<br>
+import java.io.FileInputStream;<br>
+import java.io.IOException;<br>
+import java.io.InputStreamReader;<br>
+import java.util.ArrayList;<br>
+import java.util.Collections;<br>
+import java.util.HashMap;<br>
+
+import javax.swing.JOptionPane;<br>
+
+/**<br>
+ * モデルのクラス。木構造の情報を持つ。テキストファイルを読み込み、Nodeクラスインスタンスを作成、<br>
+ * それらをHashMapに保持する。また、木構造の開始点となるNodeインスタンスの情報も持つ。<br>
+ * <br>
+ * @author スタブ作成(2013/07/15 藤原)<br>
+ * @author 実装(2013/7/18 藤原)<br>
+ */<br>
+public class ForestModel<br>
+{<br>
+	/**<br>
+	 * テキストファイルに書き込まれている番号をキーとして、<br>
+	 * Nodeインスタンスを格納するHashMapを束縛する。<br>
+	 */<br>
+	private HashMap<Integer, Node> nodes;<br>
+
+	/**<br>
+	 * 最も上位のNode(root)インスタンスを格納する。<br>
+	 */<br>
+	private ArrayList<Node> roots;<br>
+
+	/**<br>
+	 * nodesとrootsを初期化、インスタンスを作成して応答する。<br>
+	 */<br>
+	public ForestModel()<br>
+	{<br>
+		nodes = new HashMap<Integer, Node>();<br>
+		roots = new ArrayList<Node>();<br>
+	}<br>
+
+	/**<br>
+	 * テキストファイルから読み取ったデータを全て消去する。<br>
+	 */<br>
+	private void reset()<br>
+	{<br>
+		nodes.clear();<br>
+		roots.clear();<br>
+	}<br>
+
+	/**<br>
+	 * Nodeインスタンスが格納されたHashMapを応答する。<br>
+	 * <br>
+	 * @return nodes - Nodeインスタンスが格納されたHashMap<br>
+	 */<br>
+	public HashMap<Integer, Node> getNodes()<br>
+	{<br>
+		return nodes;<br>
+	}<br>
+
+	/**<br>
+	 * 最も上位のNode(root)インスタンスが格納されたArrayListを応答する。<br>
+	 * <br>
+	 * @return roots - 最も上位のNode(root)インスタンスが格納されたArrayList<br>
+	 */<br>
+	public ArrayList<Node> getRoots()<br>
+	{<br>
+		Collections.sort(roots, new NodeComparator());<br>
+		return roots;<br>
+	}<br>
+
+	/**<br>
+	 * テキストファイルを読み込み、Nodeインスタンスを作成、格納する。 またその際、最も上位のNode(root)インスタンスを別で格納しておく。<br>
+	 * <br>
+	 * @param fileName - テキストファイルのパス文字列<br>
+	 */<br>
+	protected void load(String fileName)<br>
+	{<br>
+		ArrayList<String> rootValues = new ArrayList<String>();<br>
+		FileInputStream fis = null;<br>
+		InputStreamReader isr = null;<br>
+		BufferedReader br = null;<br>
+		String line = null;<br>
+		this.reset();<br>
+
+		try<br>
+		{<br>
+			fis = new FileInputStream(fileName);<br>
+			isr = new InputStreamReader(fis);<br>
+			br = new BufferedReader(isr);<br>
+			line = br.readLine();<br>
+
+			while (!line.equals("nodes:"))<br>
+			{<br>
+				String[] splitLine;<br>
+				line = br.readLine();<br>
+				splitLine = line.split(" ");<br>
+
+				if (!splitLine[0].equals("|--"))<br>
+					rootValues.add(splitLine[0]);<br>
+			}<br>
+
+			line = br.readLine();<br>
+
+			while (!line.equals("branches:"))<br>
+			{<br>
+				String[] keyAndValue = line.split(",");<br>
+				int key = Integer.parseInt(keyAndValue[0]);<br>
+				String value = keyAndValue[1].replaceAll(" ", "");<br>
+				nodes.put(key, new Node(value));<br>
+				if (rootValues.contains(value))<br>
+					roots.add(nodes.get(key));<br>
+				line = br.readLine();<br>
+			}<br>
+			line = br.readLine();<br>
+
+			while (line != null)<br>
+			{<br>
+				String[] numbers = line.split(",");<br>
+				nodes.get(Integer.parseInt(numbers[0])).setNextNode(<br>
+						nodes.get(Integer.parseInt(numbers[1].replaceAll(" ",<br>
+								""))));<br>
+				line = br.readLine();<br>
+			}<br>
+
+		}<br>
+		catch (Exception e)<br>
+		{<br>
+			JOptionPane.showMessageDialog(null, "ファイルの読み込みに失敗しました。");<br>
+		}<br>
+		finally<br>
+		{<br>
+			try<br>
+			{<br>
+				fis.close();<br>
+				isr.close();<br>
+				br.close();<br>
+			}<br>
+			catch (IOException ioe)<br>
+			{<br>
+				ioe.printStackTrace();<br>
+			}<br>
+		}<br>
+	}<br>
+}<br>
+<br>
+
+<div class="belt">
+<h3><a name="ForestView">ForestView</a></h3>
+</div>
+package forest;<br>
+
+import java.awt.Color;<br>
+import java.awt.Graphics;<br>
+import java.awt.Point;<br>
+import java.util.ArrayList;<br>
+import java.util.HashMap;<br>
+
+import javax.swing.JPanel;<br>
+
+/**<br>
+ * ビューのクラス。モデルからNodeインスタンスを受け取り<br>
+ * ビューに表示、座標変更を行う事でアニメーションを表現する。<br>
+ * <br>
+ * @author スタブ作成(2013/07/15 藤原)<br>
+ * @author 実装(2013/7/18 藤原)<br>
+ */<br>
+public class ForestView extends JPanel implements Runnable<br>
+{<br>
+	/**<br>
+	 * 全てのNodeインスタンスを持っているForestModelのインスタンスを束縛する。<br>
+	 */<br>
+	private ForestModel aModel;<br>
+
+	/**<br>
+	 * Nodeインスタンスが格納されたHashMapを束縛する。<br>
+	 */<br>
+	private HashMap<Integer, Node> nodes;<br>
+
+	/**<br>
+	 * ビュー内で、最も下に配置されているNodeのY座標。<br>
+	 * メソッド間の値の共有の為、やむなくフィールドに記述した。<br>
+	 */<br>
+	private int bottomY = 0;<br>
+
+	/**<br>
+	 * モデルとコントローラを設定し、ビューのサイズをウィンドウと同じにする。<br>
+	 * 更に、背景色を白にし、レイアウトマネージャをnullにする。<br>
+	 * <br>
+	 * @param aModel - モデルのインスタンス<br>
+	 */<br>
+	public ForestView(ForestModel aModel)<br>
+	{<br>
+		this.aModel = aModel;<br>
+		this.setBounds(0, 0, 1280, 800);<br>
+		this.setBackground(Color.WHITE);<br>
+		this.setLayout(null);<br>
+	}<br>
+
+	/**<br>
+	 * ビューを初期状態にする。<br>
+	 */<br>
+	public void reset()<br>
+	{<br>
+		this.removeAll();<br>
+		this.nodes = null;<br>
+		this.bottomY = 0;<br>
+		this.repaint();<br>
+	}<br>
+
+	/**<br>
+	 * モデルから取得したNodeインスタンスをビューに追加する。<br>
+	 */<br>
+	public void setNode()<br>
+	{<br>
+		this.reset();<br>
+		this.nodes = aModel.getNodes();<br>
+
+		bottomY = 0;<br>
+		for (int i = 1; i <= nodes.size(); i++)<br>
+		{<br>
+			Node aNode = nodes.get(i);<br>
+			aNode.setLocation(0, bottomY);<br>
+			this.add(aNode);<br>
+			this.bottomY += aNode.getPreferredSize().height + 2;<br>
+		}<br>
+		this.setSize(1280, bottomY == 0 ? 800 : bottomY);<br>
+		this.repaint();<br>
+	}<br>
+
+	/**<br>
+	 * アニメーションを開始する。 swingの仕様上スレッド処理を用いて描画を行う。<br>
+	 */<br>
+	public void animation()<br>
+	{<br>
+		new Thread(this).start();<br>
+	}<br>
+
+	/**<br>
+	 * java.lang.Runnable#runの実装。<br>
+	 */<br>
+	@Override<br>
+	public void run()<br>
+	{<br>
+		ArrayList<Node> roots = aModel.getRoots();<br>
+		int count = 0;<br>
+		this.bottomY = 0;<br>
+		for (Node node : roots)<br>
+		{<br>
+			this.recursion(count, null, node);<br>
+			count++;<br>
+		}<br>
+		this.setSize(1280, bottomY + nodes.get(1).getPreferredSize().height + 2);<br>
+	}<br>
+
+	/**<br>
+	 * アニメーションアルゴリズム。 Nodeを再帰処理で辿りながら、木構造に並ぶ様位置を変更していく。<br>
+	 * <br>
+	 * @param count - 対象のNodeが、親Nodeから見て何番目にあるかを示す数値<br>
+	 * @param parentNode - 親Node<br>
+	 * @param aNode - 座標指定の対象となるNode<br>
+	 */<br>
+	public void recursion(int count, Node parentNode, Node aNode)<br>
+	{<br>
+		ArrayList<Node> nextNodes = aNode.getNextNodes();<br>
+
+		if (parentNode == null)<br>
+		{<br>
+			aNode.setLocation(25, bottomY + (aNode.getHeight()));<br>
+		}<br>
+		else<br>
+			if (aNode.getX() == 0)<br>
+			{<br>
+				Point parentNodePoint = parentNode.getLocation();<br>
+				parentNodePoint.x += (parentNode.getWidth() + 25);<br>
+				parentNodePoint.y = bottomY + ((parentNode.getHeight() + 2));<br>
+				aNode.setLocation(parentNodePoint);<br>
+			}<br>
+			else<br>
+				return;<br>
+
+		try<br>
+		{<br>
+			Thread.sleep(100);<br>
+		}<br>
+		catch (InterruptedException e)<br>
+		{<br>
+			e.printStackTrace();<br>
+		}<br>
+
+		this.repaint();<br>
+
+		if (nextNodes != null)<br>
+		{<br>
+
+			int i = 0;<br>
+			for (Node nextNode : nextNodes)<br>
+			{<br>
+				recursion(i, aNode, nextNode);<br>
+				i++;<br>
+			}<br>
+
+			Point firstNodePoint = nextNodes.get(0).getLocation();<br>
+			Point lastNodePoint = nextNodes.get(nextNodes.size() - 1)<br>
+					.getLocation();<br>
+
+			int middleY = (lastNodePoint.y - firstNodePoint.y) / 2;<br>
+			Point middlePoint = new Point(aNode.getX(), middleY<br>
+					+ firstNodePoint.y);<br>
+
+			if (firstNodePoint.y < aNode.getY())<br>
+			{<br>
+				middlePoint.y = aNode.getY();<br>
+			}<br>
+
+			aNode.setLocation(middlePoint);<br>
+
+			try<br>
+			{<br>
+				Thread.sleep(100);<br>
+			}<br>
+			catch (InterruptedException e)<br>
+			{<br>
+				e.printStackTrace();<br>
+			}<br>
+
+			this.repaint();<br>
+		}<br>
+
+		if (bottomY <= aNode.getY())<br>
+			bottomY = aNode.getY();<br>
+		return;<br>
+	}<br>
+
+	/**<br>
+	 * Javax.swing.JComponent#paintComponentのオーバーライド。 ノード間の線描画を行う。<br>
+	 */<br>
+	@Override<br>
+	protected void paintComponent(Graphics g)<br>
+	{<br>
+		super.paintComponent(g);<br>
+
+		g.setColor(Color.BLACK);<br>
+		Point parentNodePoint = new Point();<br>
+		Point childNodePoint = new Point();<br>
+		Node aNode;<br>
+		ArrayList<Node> nextNodes;<br>
+		if (nodes != null)<br>
+			for (int i = 1; i <= nodes.size(); i++)<br>
+			{<br>
+				aNode = nodes.get(i);<br>
+				parentNodePoint = new Point(aNode.getX()<br>
+						+ aNode.getSize().width, aNode.getY()<br>
+						+ aNode.getSize().height / 2);<br>
+				nextNodes = aNode.getNextNodes();<br>
+				if (nextNodes == null)<br>
+					continue;<br>
+
+				for (Node childNode : nextNodes)<br>
+				{<br>
+					childNodePoint = childNode.getLocation();<br>
+					childNodePoint.y += childNode.getHeight() / 2;<br>
+					g.drawLine(parentNodePoint.x, parentNodePoint.y,<br>
+							childNodePoint.x, childNodePoint.y);<br>
+				}<br>
+			}<br>
+	}<br>
+}<br>
+
+<br>
+
+<div class="belt">
+<h3><a name="Node">Node</a></h3>
+</div>
+package forest;<br>
+
+import java.awt.Color;<br>
+import java.awt.Font;<br>
+import java.awt.Graphics;<br>
+import java.awt.Point;<br>
+import java.awt.event.MouseEvent;<br>
+import java.awt.event.MouseListener;<br>
+import java.awt.event.MouseMotionListener;<br>
+import java.util.ArrayList;<br>
+import java.util.Collections;<br>
+
+import javax.swing.JLabel;<br>
+import javax.swing.border.LineBorder;<br>
+
+/**<br>
+ * 木構造の各要素を形づくるクラス。<br>
+ * <br>
+ * @author スタブ作成(2013/07/15 藤原)<br>
+ * @author @author 実装(2013/07/18 藤原)<br>
+ */<br>
+public class Node extends JLabel implements MouseListener, MouseMotionListener<br>
+{<br>
+	/**<br>
+	 * このNodeの子Nodeを格納するリスト。<br>
+	 */<br>
+	private ArrayList<Node> nextNodes = new ArrayList<Node>();<br>
+
+	private Point previous;<br>
+
+	/**<br>
+	 * 文字列を引数として受け取り、それを要素名として持つNodeインスタンスを作成して応答する。<br>
+	 * <br>
+	 * @param value - 要素名<br>
+	 */<br>
+	public Node(String value)<br>
+	{<br>
+		super(value);<br>
+		this.setLayout(null);<br>
+		this.setBackground(Color.WHITE);<br>
+		this.setBorder(new LineBorder(Color.BLACK));<br>
+		this.setFont(new Font(Font.SERIF, Font.PLAIN, 12));<br>
+
+		this.setSize(this.getPreferredSize());<br>
+		this.setOpaque(true);<br>
+
+		this.addMouseListener(this);<br>
+		this.addMouseMotionListener(this);<br>
+	}<br>
+
+	/**<br>
+	 * 子Nodeを格納しているArrayListを応答する。<br>
+	 * <br>
+	 * @return nextNodes : 子Nodeを格納しているArrayList。<br>
+	 *         長さが0の場合、null<br>
+	 */<br>
+	public ArrayList<Node> getNextNodes()<br>
+	{<br>
+		if (nextNodes.size() != 0)<br>
+		{<br>
+			Collections.sort(nextNodes, new NodeComparator());<br>
+			return nextNodes;<br>
+		}<br>
+		else<br>
+			return null;<br>
+	}<br>
+
+	/**<br>
+	 * リストへ子Nodeを追加する。<br>
+	 * <br>
+	 * @param aNode : 子Node<br>
+	 */<br>
+	public void setNextNode(Node aNode)<br>
+	{<br>
+		this.nextNodes.add(aNode);<br>
+	}<br>
+
+	/**<br>
+	 * javax.swing.JComponent#paintComponentのオーバーライド。<br>
+	 */<br>
+	@Override<br>
+	protected void paintComponent(Graphics g)<br>
+	{<br>
+		super.paintComponent(g);<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseListener#mouseClickedの実装。<br>
+	 * 自身が持っている要素名を標準出力へ出力する。<br>
+	 */<br>
+	@Override<br>
+	public void mouseClicked(MouseEvent e)<br>
+	{<br>
+		System.out.println(this.getText());<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseListener#mouseEnteredの実装。<br>
+	 * カーソルがノードに重なった時、背景色をグレーにする。<br>
+	 */<br>
+	@Override<br>
+	public void mouseEntered(MouseEvent e)<br>
+	{<br>
+		this.setBackground(Color.LIGHT_GRAY);<br>
+		this.repaint();<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseListener#mouseExitedの実装。<br>
+	 * カーソルがノードから出た時、背景色を白にする。<br>
+	 */<br>
+	@Override<br>
+	public void mouseExited(MouseEvent e)<br>
+	{<br>
+		this.setBackground(Color.WHITE);<br>
+		this.repaint();<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseListener#mousePressedの実装。<br>
+	 * カーソルが押された位置のPointインスタンスをpreviousに束縛する。<br>
+	 */<br>
+	@Override<br>
+	public void mousePressed(MouseEvent e)<br>
+	{<br>
+		previous = e.getPoint();<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseMotionListener#mouseDraggedの実装。<br>
+	 * 現在のカーソルの座標、ドラッグ開始位置の座標、及びこのノードの現在の座標を用いて<br>
+	 * 新たな位置を計算し、それを適用する。<br>
+	 */<br>
+	@Override<br>
+	public void mouseDragged(MouseEvent e)<br>
+	{<br>
+		this.setLocation(this.getX() - previous.x + e.getX(), this.getY()<br>
+				- previous.y + e.getY());<br>
+		this.getParent().repaint();<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseMotionListener#mouseMovedの実装。<br>
+	 * 何もしない。<br>
+	 */<br>
+	@Override<br>
+	public void mouseMoved(MouseEvent arg0)<br>
+	{<br>
+	}<br>
+
+	/**<br>
+	 * java.awt.event.MouseListener#mouseReleasedの実装。<br>
+	 * 何もしない。<br>
+	 */<br>
+	@Override<br>
+	public void mouseReleased(MouseEvent e)<br>
+	{<br>
+	}<br>
+}<br>
+<br>
+
+<div class="belt">
+<h3><a name="NodeComparator">NodeComparator</a></h3>
+
+</div>
+package forest;<br>
+
+import java.util.Comparator;<br>
+
+
+/**<br>
+
+ * Nodeを、それらが持つ要素名の辞書順にソートするための比較器(コンパレータ)。<br>
+
+ * <br>
+ * @author スタブ作成(2013/07/17 藤原)<br>
+ * @author 実装(2013/07/17 藤原)<br>
+ */<br>
+public class NodeComparator implements Comparator<Node><br>
+{<br>
+
+	/**<br>
+	 * java.util.Comparator#compareの実装。<br>
+	 * Nodeの要素名を辞書順で比較した結果を返す。<br>
+	 * 二つのNodeの要素名が等しい場合は、そのNodeが持つ1番目の子同士<br>
+	 * を比較した結果を返す。<br>
+	 * <br>
+	 * @return node1 > node2 なら 1、<br>
+	 *         node1 < node2 なら -1<br>
+	 */<br>
+	public int compare(Node node1, Node node2)<br>
+	{<br>
+		String value1 = node1.getText();<br>
+		String value2 = node2.getText();<br>
+
+		if (value1.compareTo(value2) != 0)<br>
+			return value1.compareTo(value2);<br>
+		else<br>
+			return node1.getNextNodes().get(0).getText()<br>
+					.compareTo(node1.getNextNodes().get(0).getText());<br>
+	}<br>
+}<br>
+
+<br>
+
+<div class="belt">
+<h3><a name="history">更新履歴</a></h3>
+</div>
+<hr>
+<div class="right-small">Copyright 2013 Project Root, Updated: 2013/07/17 (Created: 2013/07/17)</div>
+</body>
+</html>

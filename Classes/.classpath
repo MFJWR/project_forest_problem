@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding=".DS_Store|.svn/|BasicDesign/|Classes/|DetailDesign/|DevelopmentPlan/|DevelopmentResult/|JavaDoc/|Makefile|Manual/|Program/|Requirement/|TestResult/|TestSpecification/|bin/|build.xml|forest.mf|index.html|svn-commit.tmp" kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="output" path="Classes"/>
+</classpath>
